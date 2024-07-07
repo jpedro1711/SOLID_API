@@ -1,0 +1,161 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\joaop\\source\\repos\\SOLID\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|c:\\users\\joaop\\source\\repos\\solid\\solid\\usecases\\calculatepayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|solutionrelative:solid\\usecases\\calculatepayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|c:\\users\\joaop\\source\\repos\\solid\\solid\\usecases\\strategies\\factories\\calculatesalaryfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|solutionrelative:solid\\usecases\\strategies\\factories\\calculatesalaryfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|c:\\users\\joaop\\source\\repos\\solid\\solid\\usecases\\strategies\\factories\\calculatesalaryfactorymethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|solutionrelative:solid\\usecases\\strategies\\factories\\calculatesalaryfactorymethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|c:\\users\\joaop\\source\\repos\\solid\\solid\\usecases\\strategies\\calculatemonthlysalary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|solutionrelative:solid\\usecases\\strategies\\calculatemonthlysalary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|c:\\users\\joaop\\source\\repos\\solid\\solid\\usecases\\interfaces\\icalculatepayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|solutionrelative:solid\\usecases\\interfaces\\icalculatepayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|c:\\users\\joaop\\source\\repos\\solid\\solid\\repositories\\base\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|solutionrelative:solid\\repositories\\base\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|c:\\users\\joaop\\source\\repos\\solid\\solid\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|solutionrelative:solid\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|c:\\users\\joaop\\source\\repos\\solid\\solid\\repositories\\payrollrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AB7C3F-4308-4258-BCB6-EFC223333347}|SOLID\\SOLID.csproj|solutionrelative:solid\\repositories\\payrollrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CalculatePayroll.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\CalculatePayroll.cs",
+              "RelativeDocumentMoniker": "SOLID\\UseCases\\CalculatePayroll.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\CalculatePayroll.cs",
+              "RelativeToolTip": "SOLID\\UseCases\\CalculatePayroll.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAwBMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:25:40.545Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CalculateSalaryFactoryMethod.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\Strategies\\Factories\\CalculateSalaryFactoryMethod.cs",
+              "RelativeDocumentMoniker": "SOLID\\UseCases\\Strategies\\Factories\\CalculateSalaryFactoryMethod.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\Strategies\\Factories\\CalculateSalaryFactoryMethod.cs",
+              "RelativeToolTip": "SOLID\\UseCases\\Strategies\\Factories\\CalculateSalaryFactoryMethod.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T14:06:43.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CalculateSalaryFactory.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\Strategies\\Factories\\CalculateSalaryFactory.cs",
+              "RelativeDocumentMoniker": "SOLID\\UseCases\\Strategies\\Factories\\CalculateSalaryFactory.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\Strategies\\Factories\\CalculateSalaryFactory.cs",
+              "RelativeToolTip": "SOLID\\UseCases\\Strategies\\Factories\\CalculateSalaryFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T14:00:51.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CalculateMonthlySalary.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\Strategies\\CalculateMonthlySalary.cs",
+              "RelativeDocumentMoniker": "SOLID\\UseCases\\Strategies\\CalculateMonthlySalary.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\Strategies\\CalculateMonthlySalary.cs",
+              "RelativeToolTip": "SOLID\\UseCases\\Strategies\\CalculateMonthlySalary.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:59:08.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICalculatePayroll.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\Interfaces\\ICalculatePayroll.cs",
+              "RelativeDocumentMoniker": "SOLID\\UseCases\\Interfaces\\ICalculatePayroll.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\UseCases\\Interfaces\\ICalculatePayroll.cs",
+              "RelativeToolTip": "SOLID\\UseCases\\Interfaces\\ICalculatePayroll.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:44:21.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\Repositories\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "SOLID\\Repositories\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\Repositories\\EmployeeRepository.cs",
+              "RelativeToolTip": "SOLID\\Repositories\\EmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:50:57.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PayrollRepository.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\Repositories\\PayrollRepository.cs",
+              "RelativeDocumentMoniker": "SOLID\\Repositories\\PayrollRepository.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\Repositories\\PayrollRepository.cs",
+              "RelativeToolTip": "SOLID\\Repositories\\PayrollRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:44:09.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\Repositories\\Base\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "SOLID\\Repositories\\Base\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\SOLID\\SOLID\\Repositories\\Base\\IBaseRepository.cs",
+              "RelativeToolTip": "SOLID\\Repositories\\Base\\IBaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:27:58.856Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
