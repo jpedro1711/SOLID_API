@@ -7,6 +7,7 @@ using SOLID.Repositories.Base;
 using SOLID.Repositories.Interfaces;
 using SOLID.UseCases;
 using SOLID.UseCases.Interfaces;
+using SOLID.UseCases.Strategies.Factories;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,7 +27,7 @@ builder.Services.AddScoped<IAppDbContext, SalaryAppDbContext>();
 builder.Services.AddScoped<IPayrollRepository, PayrollRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<ICalculatePayroll, CalculatePayroll>();
-
+builder.Services.AddScoped<ICalculateSalaryFactoryMethod, CalculateSalaryFactory>();
 
 var app = builder.Build();
 

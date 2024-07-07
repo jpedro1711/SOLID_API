@@ -3,9 +3,9 @@ using SOLID.UseCases.Interfaces;
 
 namespace SOLID.UseCases.Strategies.Factories
 {
-    public class CalculateSalaryFactory : CalculateSalaryFactoryMethod
+    public class CalculateSalaryFactory : ICalculateSalaryFactoryMethod
     {
-        public override double CalculateSalary(Employee employee, int totalHours)
+        public double CalculateSalary(Employee employee, int totalHours)
         {
             if (employee.Category.ToLower() == "hourly")
             {

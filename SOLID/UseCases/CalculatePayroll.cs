@@ -11,10 +11,12 @@ namespace SOLID.UseCases
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IPayrollRepository _payrollRepository;
-        public CalculatePayroll(IEmployeeRepository employeeRepository, IPayrollRepository payrollRepository) 
+        private readonly ICalculateSalaryFactoryMethod _calculateSalaryFactoryMethod;
+        public CalculatePayroll(IEmployeeRepository employeeRepository, IPayrollRepository payrollRepository, ICalculateSalaryFactoryMethod calculateSalaryFactoryMethod) 
         {
             _employeeRepository = employeeRepository;
             _payrollRepository = payrollRepository;
+            _calculateSalaryFactoryMethod = calculateSalaryFactoryMethod;
         }
         public double Execute(Guid employeeId, int year, int month)
         {
@@ -26,9 +28,7 @@ namespace SOLID.UseCases
 
             int totalHours = payrools.Sum(p => (p.Checkout - p.Checkin).Hours);
 
-            CalculateSalaryFactory calculateSalaryFactory = new();
-
-            double employeeSalary = calculateSalaryFactory.CalculateSalary(employee, totalHours);
+            double employeeSalary = _calculateSalaryFactoryMethod.CalculateSalary(employee, totalHours);
 
             return MathUtils.RoundNumber(employeeSalary, 2);
         }
