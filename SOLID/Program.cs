@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SOLID.Controllers;
 using SOLID.Data;
+using SOLID.Middlewares;
 using SOLID.Repositories;
 using SOLID.Repositories.Base;
 using SOLID.Repositories.Interfaces;
@@ -37,7 +38,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseMiddleware<ErrorMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();

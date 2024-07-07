@@ -134,3 +134,4 @@ C:\Users\joaop\source\repos\SOLID\SOLID\obj\Debug\net8.0\refint\SOLID.dll
 C:\Users\joaop\source\repos\SOLID\SOLID\obj\Debug\net8.0\SOLID.pdb
 C:\Users\joaop\source\repos\SOLID\SOLID\obj\Debug\net8.0\SOLID.genruntimeconfig.cache
 C:\Users\joaop\source\repos\SOLID\SOLID\obj\Debug\net8.0\ref\SOLID.dll
+C:\Users\joaop\source\repos\SOLID\SOLID\obj\Debug\net8.0\SOLID.sourcelink.json
