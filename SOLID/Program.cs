@@ -5,6 +5,7 @@ using SOLID.Middlewares;
 using SOLID.Repositories;
 using SOLID.Repositories.Base;
 using SOLID.Repositories.Interfaces;
+using SOLID.Transactions;
 using SOLID.UseCases;
 using SOLID.UseCases.Interfaces;
 using SOLID.UseCases.Strategies.Factories;
@@ -28,6 +29,7 @@ builder.Services.AddScoped<IPayrollRepository, PayrollRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<ICalculatePayroll, CalculatePayroll>();
 builder.Services.AddScoped<ICalculateSalaryFactoryMethod, CalculateSalaryFactory>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
