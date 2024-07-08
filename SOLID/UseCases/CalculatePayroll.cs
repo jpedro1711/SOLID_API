@@ -18,6 +18,7 @@ namespace SOLID.UseCases
             _payrollRepository = payrollRepository;
             _calculateSalaryFactoryMethod = calculateSalaryFactoryMethod;
         }
+        public CalculatePayroll() { }
         public double Execute(Guid employeeId, int year, int month)
         {
             Employee employee = _employeeRepository.Get(employeeId);
