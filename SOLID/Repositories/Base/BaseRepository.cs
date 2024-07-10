@@ -37,5 +37,12 @@ namespace SOLID.Repositories.Base
             return entity;
         }
 
+        public T Update(T entity)
+        {
+            _context.Set<T>().Update(entity);
+            _unitOfWork.Commit();
+            return entity;
+        }
+
     }
 }

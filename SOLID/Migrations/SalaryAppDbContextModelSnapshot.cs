@@ -50,10 +50,10 @@ namespace SOLID.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Checkin")
+                    b.Property<DateTime?>("Checkin")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Checkout")
+                    b.Property<DateTime?>("Checkout")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("EmployeeId")

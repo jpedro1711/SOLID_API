@@ -150,3 +150,5 @@ C:\Users\joaop\source\repos\SOLID\SOLID.UseCases.Tests\bin\Debug\net8.0\runtimes
 C:\Users\joaop\source\repos\SOLID\SOLID.UseCases.Tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\joaop\source\repos\SOLID\SOLID.UseCases.Tests\bin\Debug\net8.0\SOLID.dll
 C:\Users\joaop\source\repos\SOLID\SOLID.UseCases.Tests\bin\Debug\net8.0\SOLID.pdb
+C:\Users\joaop\source\repos\SOLID\SOLID.UseCases.Tests\bin\Debug\net8.0\AutoFixture.dll
+C:\Users\joaop\source\repos\SOLID\SOLID.UseCases.Tests\bin\Debug\net8.0\Fare.dll
