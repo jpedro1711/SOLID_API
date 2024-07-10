@@ -1,16 +1,10 @@
-﻿using Moq;
+﻿using AutoFixture;
+using Moq;
 using SOLID.Models;
 using SOLID.Repositories;
 using SOLID.Repositories.Interfaces;
 using SOLID.UseCases.Interfaces;
 using SOLID.UseCases.Strategies.Factories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace SOLID.UseCases.Tests
 {
@@ -20,6 +14,7 @@ namespace SOLID.UseCases.Tests
         private readonly Mock<IPayrollRepository> _payrollRepository;
         private readonly ICalculatePayroll _calculatePayroll;
         private readonly ICalculateSalaryFactoryMethod calculateSalaryFactoryMethod;
+        private readonly Fixture _fixture;
 
         public CalculatePayrollTests()
         {
@@ -27,6 +22,7 @@ namespace SOLID.UseCases.Tests
             _employeeRepository = new Mock<IEmployeeRepository>();
             calculateSalaryFactoryMethod = new CalculateSalaryFactory();
             _calculatePayroll = new CalculatePayroll(_employeeRepository.Object, _payrollRepository.Object, calculateSalaryFactoryMethod);
+            _fixture = new Fixture();
         }
 
         [Fact]
@@ -37,13 +33,10 @@ namespace SOLID.UseCases.Tests
             int year = 2024;
             int month = 7;
 
-            var employee = new Employee
-            {
-                Id = employeeId,
-                Name = "Test",
-                HourlyRate = 10,
-                Category = "hourly"
-            };
+            var employee = _fixture.Create<Employee>();
+
+            employee.HourlyRate = 10;
+            employee.Category = "hourly";
 
             var payrolls = new List<Payroll>
             {
@@ -78,13 +71,10 @@ namespace SOLID.UseCases.Tests
             int year = 2024;
             int month = 7;
 
-            var employee = new Employee
-            {
-                Id = employeeId,
-                Name = "Test",
-                HourlyRate = 100,
-                Category = "monthly"
-            };
+            var employee = _fixture.Create<Employee>();
+
+            employee.HourlyRate = 10;
+            employee.Category = "monthly";
 
             var payrolls = new List<Payroll>
             {
@@ -97,7 +87,7 @@ namespace SOLID.UseCases.Tests
             _employeeRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(employee);
             _payrollRepository.Setup(x => x.Get(It.IsAny<Func<Payroll, bool>>())).Returns(payrolls);
 
-            var expectedResultSalary = 2400;
+            var expectedResultSalary = 240;
 
             var resultSalary = _calculatePayroll.Execute(employeeId, year, month);
 
@@ -119,13 +109,9 @@ namespace SOLID.UseCases.Tests
             int year = 2024;
             int month = 7;
 
-            var employee = new Employee
-            {
-                Id = employeeId,
-                Name = "Test",
-                HourlyRate = 10,
-                Category = "volunteer"
-            };
+            var employee = _fixture.Create<Employee>();
+
+            employee.Category = "volunteer";
 
             var payrolls = new List<Payroll>
             {

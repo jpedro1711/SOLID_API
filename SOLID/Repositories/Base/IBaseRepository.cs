@@ -6,5 +6,6 @@
         T Get(Guid id);
         IEnumerable<T> Get(Func<T, bool> predicate);
         T Save(T entity);
+        T Update(T entity);
     }
 }

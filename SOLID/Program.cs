@@ -30,6 +30,7 @@ builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<ICalculatePayroll, CalculatePayroll>();
 builder.Services.AddScoped<ICalculateSalaryFactoryMethod, CalculateSalaryFactory>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IRegisterTime, RegisterTime>();
 
 var app = builder.Build();
 
