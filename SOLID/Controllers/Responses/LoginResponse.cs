@@ -1,8 +1,12 @@
-﻿namespace SOLID.Controllers.Responses
+﻿using Microsoft.AspNetCore.Http;
+using System.Net;
+
+namespace SOLID.Controllers.Responses
 {
     public class LoginResponse
     {
-        public string Message { get; set; }
-        public string Token { get; set; }
+        public HttpStatusCode statusCode;
+        public string? Token { get; set; }
+        public string? Message { get; set; }
     }
 }

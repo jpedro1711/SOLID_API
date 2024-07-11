@@ -1,23 +1,8 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using SOLID.Controllers;
 using SOLID.Data;
 using SOLID.Extensions;
 using SOLID.Middlewares;
-using SOLID.Repositories;
-using SOLID.Repositories.Base;
-using SOLID.Repositories.Interfaces;
-using SOLID.Services;
-using SOLID.Services.interfaces;
-using SOLID.Transactions;
-using SOLID.UseCases;
-using SOLID.UseCases.Interfaces;
-using SOLID.UseCases.Strategies.Factories;
-using Swashbuckle.AspNetCore.Filters;
-using System;
-using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

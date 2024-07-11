@@ -30,6 +30,9 @@ namespace SOLID.Extensions
             services.AddScoped<IRegisterUser, RegisterUser>();
             services.AddScoped<IAuthenticateUser, AuthenticateUser>();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IRegisterCheckinOrCheckout, RegisterCheckinOrCheckout>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddHttpContextAccessor();
         }
 
         public static void ConfigureSwagger(this IServiceCollection services)

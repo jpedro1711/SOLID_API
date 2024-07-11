@@ -22,8 +22,7 @@ namespace SOLID.Services
             var role = user.Role.ToString();
 
             List<Claim> claims = new List<Claim> {
-                new Claim(ClaimTypes.UserData, user.Username),
-                new Claim(ClaimTypes.UserData, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.Username),
                 new Claim(ClaimTypes.Role, user.Role.ToString()),
             };
 
