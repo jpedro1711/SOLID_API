@@ -4,3 +4,8 @@
 
 /.vs/SOLID
 /.vs/ProjectEvaluation
+/SOLID.UseCases.Tests/bin/Debug/net8.0
+/SOLID/obj/project.assets.json
+/SOLID/obj/project.nuget.cache
+/SOLID/obj/SOLID.csproj.nuget.dgspec.json
+/SOLID/bin/Debug/net8.0

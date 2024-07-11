@@ -10,5 +10,6 @@ namespace SOLID.Data
         }
         public DbSet<Employee> Employee { get; set; }
         public DbSet<Payroll> Payroll { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

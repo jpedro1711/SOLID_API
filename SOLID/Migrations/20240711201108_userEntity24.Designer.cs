@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SOLID.Data;
 
@@ -11,9 +12,11 @@ using SOLID.Data;
 namespace SOLID.Migrations
 {
     [DbContext(typeof(SalaryAppDbContext))]
-    partial class SalaryAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240711201108_userEntity24")]
+    partial class userEntity24
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

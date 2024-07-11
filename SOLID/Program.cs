@@ -1,36 +1,38 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using SOLID.Controllers;
 using SOLID.Data;
+using SOLID.Extensions;
 using SOLID.Middlewares;
 using SOLID.Repositories;
 using SOLID.Repositories.Base;
 using SOLID.Repositories.Interfaces;
+using SOLID.Services;
+using SOLID.Services.interfaces;
 using SOLID.Transactions;
 using SOLID.UseCases;
 using SOLID.UseCases.Interfaces;
 using SOLID.UseCases.Strategies.Factories;
+using Swashbuckle.AspNetCore.Filters;
 using System;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+DependencyInjectionExtension.ConfigureAuth(builder);
 
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.ConfigureSwagger();
+builder.Services.AddApplicationServices();
+
 builder.Services.AddDbContext<SalaryAppDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<IAppDbContext, SalaryAppDbContext>();
-builder.Services.AddScoped<IPayrollRepository, PayrollRepository>();
-builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-builder.Services.AddScoped<ICalculatePayroll, CalculatePayroll>();
-builder.Services.AddScoped<ICalculateSalaryFactoryMethod, CalculateSalaryFactory>();
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IRegisterTime, RegisterTime>();
 
 var app = builder.Build();
 
@@ -43,31 +45,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseMiddleware<ErrorMiddleware>();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-try
-{
-    InitDB.InitDb(app);
-}
-catch (Exception e)
-{
-    Console.WriteLine("Error seeding DB");
-}
+DependencyInjectionExtension.InitMigration(app);
 
-ApplyMigration();
+DependencyInjectionExtension.ApplyMigration(app);
 app.Run();
 
-void ApplyMigration()
-{
-    using (var scope = app.Services.CreateScope())
-    {
-        var _db = scope.ServiceProvider.GetRequiredService<SalaryAppDbContext>();
-
-        if (_db.Database.GetPendingMigrations().Count() > 0)
-        {
-            _db.Database.Migrate();
-        }
-    }
-}
