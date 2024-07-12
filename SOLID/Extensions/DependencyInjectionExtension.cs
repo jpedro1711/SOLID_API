@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Reflection;
 
 namespace SOLID.Extensions.DependencyInjection
 {
@@ -33,6 +34,7 @@ namespace SOLID.Extensions.DependencyInjection
             services.AddScoped<IRegisterCheckinOrCheckout, RegisterCheckinOrCheckout>();
             services.AddScoped<IUserService, UserService>();
             services.AddHttpContextAccessor();
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
         }
 
         public static void ConfigureSwagger(this IServiceCollection services)

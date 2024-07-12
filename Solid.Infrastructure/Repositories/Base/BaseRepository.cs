@@ -32,16 +32,36 @@ namespace SOLID.Repositories.Base
 
         public T Save(T entity)
         {
-            _context.Set<T>().Add(entity);
-            _unitOfWork.Commit();
-            return entity;
+            try
+            {
+                _unitOfWork.CreateTransaction();
+                _context.Set<T>().Add(entity);
+                _unitOfWork.Save();
+                _unitOfWork.Commit();
+                return entity;
+            }
+            catch
+            {
+                _unitOfWork.Rollback();
+                throw;
+            }
         }
 
         public T Update(T entity)
         {
-            _context.Set<T>().Update(entity);
-            _unitOfWork.Commit();
-            return entity;
+            try
+            {
+                _unitOfWork.CreateTransaction();
+                _context.Set<T>().Update(entity);
+                _unitOfWork.Save();
+                _unitOfWork.Commit();
+                return entity;
+            }
+            catch
+            {
+                _unitOfWork.Rollback();
+                throw;
+            }
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using SOLID.Models;
 
 namespace SOLID.Data
@@ -9,5 +10,6 @@ namespace SOLID.Data
         DbSet<Payroll> Payroll { get; set; }
         DbSet<T> Set<T>() where T : class;
         int SaveChanges();
+        DatabaseFacade Database {  get; }
     }
 }
