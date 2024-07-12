@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SOLID.Data;
-using SOLID.Extensions;
 using SOLID.Middlewares;
-
+using SOLID.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,8 +33,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
-DependencyInjectionExtension.InitMigration(app);
 
 DependencyInjectionExtension.ApplyMigration(app);
 app.Run();

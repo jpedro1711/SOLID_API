@@ -91,6 +91,39 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
         "compile": {
@@ -1606,6 +1639,49 @@
             "rid": "win"
           }
         }
+      },
+      "Solid.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.IdentityModel.Tokens": "7.1.2",
+          "Solid.Domain": "1.0.0",
+          "Solid.Infrastructure": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "7.1.2"
+        },
+        "compile": {
+          "bin/placeholder/Solid.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Solid.Application.dll": {}
+        }
+      },
+      "Solid.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Solid.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Solid.Domain.dll": {}
+        }
+      },
+      "Solid.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.6",
+          "Solid.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Solid.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Solid.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -1714,6 +1790,32 @@
         "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
         "microsoft.aspnetcore.authentication.jwtbearer.8.0.7.nupkg.sha512",
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+      "sha512": "Nxs7Z1q3f1STfLYKJSVXCs1iBl+Ya6E8o4Oy1bCxJ/rNI44E/0f6tbsrVqAWfB7jlnJfyaAtIalBVxPKUPQb4Q==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.abstractions/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.xml",
+        "microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/2.2.0": {
+      "sha512": "ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
@@ -4364,6 +4466,21 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Solid.Application/1.0.0": {
+      "type": "project",
+      "path": "../Solid.Application/Solid.Application.csproj",
+      "msbuildProject": "../Solid.Application/Solid.Application.csproj"
+    },
+    "Solid.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Solid.Domain.csproj",
+      "msbuildProject": "../Domain/Solid.Domain.csproj"
+    },
+    "Solid.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Solid.Infrastructure/Solid.Infrastructure.csproj",
+      "msbuildProject": "../Solid.Infrastructure/Solid.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4373,6 +4490,9 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.6",
+      "Solid.Application >= 1.0.0",
+      "Solid.Domain >= 1.0.0",
+      "Solid.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "Swashbuckle.AspNetCore.Filters >= 8.0.2"
     ]
@@ -4404,7 +4524,17 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\joaop\\source\\repos\\SOLID\\Domain\\Solid.Domain.csproj": {
+              "projectPath": "C:\\Users\\joaop\\source\\repos\\SOLID\\Domain\\Solid.Domain.csproj"
+            },
+            "C:\\Users\\joaop\\source\\repos\\SOLID\\Solid.Application\\Solid.Application.csproj": {
+              "projectPath": "C:\\Users\\joaop\\source\\repos\\SOLID\\Solid.Application\\Solid.Application.csproj"
+            },
+            "C:\\Users\\joaop\\source\\repos\\SOLID\\Solid.Infrastructure\\Solid.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\joaop\\source\\repos\\SOLID\\Solid.Infrastructure\\Solid.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

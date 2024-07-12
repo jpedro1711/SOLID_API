@@ -38,7 +38,7 @@ namespace SOLID.UseCases.Tests
             _employeeRepository.Setup(x => x.Get(It.IsAny<Func<Employee, bool>>())).Returns(new List<Employee> { employee });
             _payrollRepository.Setup(x => x.Get(It.IsAny<Func<Payroll, bool>>())).Returns(new List<Payroll>());
 
-            var req = new RegisterCheckinOrCheckoutRequest { EmployeeId = employee.Id };
+            var req = new RegisterCheckinOrCheckoutRequest { EmployeeUniqueName = employee.Name.ToLower() };
 
             _registerCheckinOrCheckout.Execute(req);
 
@@ -63,7 +63,7 @@ namespace SOLID.UseCases.Tests
             _employeeRepository.Setup(x => x.Get(It.IsAny<Func<Employee, bool>>())).Returns(new List<Employee> { employee });
             _payrollRepository.Setup(x => x.Get(It.IsAny<Func<Payroll, bool>>())).Returns(payrolls);
 
-            var req = new RegisterCheckinOrCheckoutRequest { EmployeeId = employee.Id };
+            var req = new RegisterCheckinOrCheckoutRequest { EmployeeUniqueName = employee.Name.ToLower() };
 
             _registerCheckinOrCheckout.Execute(req);
 

@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace SOLID.Extensions
+namespace SOLID.Extensions.DependencyInjection
 {
     public static class DependencyInjectionExtension
     {
@@ -47,19 +47,6 @@ namespace SOLID.Extensions
 
                 options.OperationFilter<SecurityRequirementsOperationFilter>();
             });
-        }
-
-        public static void InitMigration(WebApplication app)
-        {
-            try
-            {
-                InitDB.InitDb(app);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error seeding DB");
-            }
-
         }
 
         public static void ApplyMigration(WebApplication app)

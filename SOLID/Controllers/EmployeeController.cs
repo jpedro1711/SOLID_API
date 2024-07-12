@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SOLID.Controllers.Requests;
 using SOLID.Controllers.Responses;
-using SOLID.Data;
 using SOLID.UseCases.Interfaces;
 
 namespace SOLID.Controllers
@@ -12,13 +11,11 @@ namespace SOLID.Controllers
     [Route("/employee")]
     public class EmployeeController : Controller
     {
-        private readonly IAppDbContext _context;
         private readonly ICalculatePayroll _calculatePayroll;
         private readonly IRegisterCheckinOrCheckout _registerCheckinOrCheckout;
 
-        public EmployeeController(SalaryAppDbContext context, ICalculatePayroll calculatePayroll, IRegisterCheckinOrCheckout registerCheckinOrCheckout)
+        public EmployeeController(ICalculatePayroll calculatePayroll, IRegisterCheckinOrCheckout registerCheckinOrCheckout)
         {
-            _context = context;
             _calculatePayroll = calculatePayroll;
             _registerCheckinOrCheckout = registerCheckinOrCheckout;
         }
