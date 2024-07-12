@@ -2,6 +2,6 @@
 {
     public class RegisterCheckinOrCheckoutRequest
     {
-        public Guid EmployeeId { get; set; }
+        public string EmployeeUniqueName { get; set; }
     }
 }

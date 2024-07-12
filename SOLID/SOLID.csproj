@@ -22,4 +22,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Solid.Domain.csproj" />
+    <ProjectReference Include="..\Solid.Application\Solid.Application.csproj" />
+    <ProjectReference Include="..\Solid.Infrastructure\Solid.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
