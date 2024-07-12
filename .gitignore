@@ -9,3 +9,12 @@
 /SOLID/obj/project.nuget.cache
 /SOLID/obj/SOLID.csproj.nuget.dgspec.json
 /SOLID/bin/Debug/net8.0
+/Domain/bin/Debug/net8.0
+/Domain/obj/Debug/net8.0
+/Domain/obj
+/Solid.Application/bin/Debug/net8.0
+/Solid.Application/obj/Debug/net8.0
+/Solid.Application/obj
+/Solid.Infrastructure/bin/Debug/net8.0
+/Solid.Infrastructure/obj/Debug/net8.0
+/Solid.Infrastructure/obj
