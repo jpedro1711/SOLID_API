@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Reflection;
+using Solid.Application.Interfaces;
+using Solid.Application.UseCases;
 
 namespace SOLID.Extensions.DependencyInjection
 {
@@ -33,8 +35,19 @@ namespace SOLID.Extensions.DependencyInjection
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IRegisterCheckinOrCheckout, RegisterCheckinOrCheckout>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IGetEmployeeByUsername, GetEmployeeByUsername>();
+            services.AddScoped<IGetPayrollsByEmployee, GetPayrollsByEmployee>();
             services.AddHttpContextAccessor();
-            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowLocalhost5173",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:5173")
+                               .AllowAnyHeader()
+                               .AllowAnyMethod();
+                    });
+            });
         }
 
         public static void ConfigureSwagger(this IServiceCollection services)

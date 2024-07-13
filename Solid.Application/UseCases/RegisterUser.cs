@@ -1,7 +1,5 @@
 ﻿using SOLID.Models;
 using SOLID.Repositories.Interfaces;
-using System.Net;
-using System.IdentityModel.Tokens.Jwt;
 using SOLID.UseCases.Interfaces;
 using SOLID.Controllers.Requests;
 using SOLID.Models.Enums;

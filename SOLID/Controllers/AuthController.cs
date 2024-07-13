@@ -10,7 +10,9 @@ using SOLID.UseCases.Interfaces;
 
 namespace SOLID.Controllers
 {
-    public class AuthController
+    [ApiController]
+    [Route("[controller]")]
+    public class AuthController : ControllerBase
     {
         private readonly IRegisterUser _registerUser;
         private readonly IAuthenticateUser _authenticateUser;
@@ -23,34 +25,35 @@ namespace SOLID.Controllers
             _userService = userService;
         }
 
-        [HttpPost("/register")]
-        public BaseResponse RegisterUser([FromBody] AuthRequest request)
+        [HttpPost("register")]
+        public IActionResult RegisterUser([FromBody] AuthRequest request)
         {
             try
             {
                 _registerUser.Execute(request);
 
-                return new BaseResponse { statusCode = System.Net.HttpStatusCode.Created, Message =  "User registered successfullt" };
+                return Ok(new BaseResponse { statusCode = System.Net.HttpStatusCode.Created, Message =  "User registered successfullt" });
             }
-            catch (InvalidDataException ex)
+            catch (Exception ex)
             {
-                return new BaseResponse { statusCode = System.Net.HttpStatusCode.BadRequest, Message = "User already exists" };
+                return BadRequest(new BaseResponse { statusCode = System.Net.HttpStatusCode.BadRequest, Message = "User already exists" });
             }
         }
 
-        [HttpPost("/login")]
-        public LoginResponse AuthenticateUser([FromBody] AuthRequest request)
+        [HttpPost("login")]
+        public IActionResult AuthenticateUser([FromBody] AuthRequest request)
         {
             try
             {
                 var response = _authenticateUser.Execute(request);
-
-                return new LoginResponse { statusCode = System.Net.HttpStatusCode.OK, Token = response };
+                return Ok(new LoginResponse { statusCode = System.Net.HttpStatusCode.OK, Token = response });
             }
             catch (Exception ex)
             {
-                return new LoginResponse { statusCode = System.Net.HttpStatusCode.BadRequest, Message = ex.Message };
+                return BadRequest();
             }
+
+                
         }
 
         [Authorize]
