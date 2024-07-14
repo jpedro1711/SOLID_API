@@ -38,6 +38,8 @@ namespace SOLID.UseCases.Tests
             employee.HourlyRate = 10;
             employee.Category = "hourly";
 
+            var employeeList = new List<Employee> { employee };
+
             var payrolls = new List<Payroll>
             {
                 new Payroll { Checkin = DateTime.Now, Checkout = DateTime.Now.AddHours(8), Employee = employee, Id = Guid.NewGuid() },
@@ -46,16 +48,16 @@ namespace SOLID.UseCases.Tests
             };
             // Act
 
-            _employeeRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(employee);
+            _employeeRepository.Setup(x => x.Get(It.IsAny<Func<Employee, bool>>())).Returns(employeeList);
             _payrollRepository.Setup(x => x.Get(It.IsAny<Func<Payroll, bool>>())).Returns(payrolls);
 
             var expectedResultSalary = 240;
 
-            var resultSalary = _calculatePayroll.Execute(employeeId, year, month);
+            var resultSalary = _calculatePayroll.Execute(employee.Name, year, month);
 
             // Assert
 
-            _employeeRepository.Verify(x => x.Get(It.IsAny<Guid>()), Times.Once);
+            _employeeRepository.Verify(x => x.Get(It.IsAny<Func<Employee, bool>>()), Times.Once);
             _payrollRepository.Verify(x => x.Get(It.IsAny<Func<Payroll, bool>>()), Times.Once);
 
             Assert.Equal(expectedResultSalary, resultSalary);
@@ -84,16 +86,18 @@ namespace SOLID.UseCases.Tests
             };
             // Act
 
-            _employeeRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(employee);
+            var employeeList = new List<Employee> { employee };
+
+            _employeeRepository.Setup(x => x.Get(It.IsAny<Func<Employee, bool>>())).Returns(employeeList);
             _payrollRepository.Setup(x => x.Get(It.IsAny<Func<Payroll, bool>>())).Returns(payrolls);
 
             var expectedResultSalary = 240;
 
-            var resultSalary = _calculatePayroll.Execute(employeeId, year, month);
+            var resultSalary = _calculatePayroll.Execute(employee.Name, year, month);
 
             // Assert
 
-            _employeeRepository.Verify(x => x.Get(It.IsAny<Guid>()), Times.Once);
+            _employeeRepository.Verify(x => x.Get(It.IsAny<Func<Employee, bool>>()), Times.Once);
             _payrollRepository.Verify(x => x.Get(It.IsAny<Func<Payroll, bool>>()), Times.Once);
 
             Assert.Equal(expectedResultSalary, resultSalary);
@@ -113,6 +117,8 @@ namespace SOLID.UseCases.Tests
 
             employee.Category = "volunteer";
 
+            var employeeList = new List<Employee> { employee };
+
             var payrolls = new List<Payroll>
             {
                 new Payroll { Checkin = DateTime.Now, Checkout = DateTime.Now.AddHours(8), Employee = employee, Id = Guid.NewGuid() },
@@ -121,14 +127,14 @@ namespace SOLID.UseCases.Tests
             };
             // Act
 
-            _employeeRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(employee);
+            _employeeRepository.Setup(x => x.Get(It.IsAny<Func<Employee, bool>>())).Returns(employeeList);
             _payrollRepository.Setup(x => x.Get(It.IsAny<Func<Payroll, bool>>())).Returns(payrolls);
 
             // Assert
 
-            Assert.Throws<ArgumentException>(() => _calculatePayroll.Execute(employeeId, year, month));
+            Assert.Throws<ArgumentException>(() => _calculatePayroll.Execute(employee.Name, year, month));
 
-            _employeeRepository.Verify(x => x.Get(It.IsAny<Guid>()), Times.Once);
+            _employeeRepository.Verify(x => x.Get(It.IsAny<Func<Employee, bool>>()), Times.Once);
             _payrollRepository.Verify(x => x.Get(It.IsAny<Func<Payroll, bool>>()), Times.Once);
 
             VerifyMocks();
@@ -141,9 +147,9 @@ namespace SOLID.UseCases.Tests
             int year = 2024;
             int month = 7;
 
-            _employeeRepository.Setup(x => x.Get(It.IsAny<Guid>())).Throws(new ArgumentException());
+            _employeeRepository.Setup(x => x.Get(It.IsAny<Func<Employee, bool>>())).Throws(new ArgumentException());
 
-            Assert.Throws<ArgumentException>(() => _calculatePayroll.Execute(employeeId, year, month));
+            Assert.Throws<ArgumentException>(() => _calculatePayroll.Execute("name", year, month));
         }
 
         private void VerifyMocks()

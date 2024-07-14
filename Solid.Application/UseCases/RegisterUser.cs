@@ -3,16 +3,18 @@ using SOLID.Repositories.Interfaces;
 using SOLID.UseCases.Interfaces;
 using SOLID.Controllers.Requests;
 using SOLID.Models.Enums;
+using SOLID.Repositories;
 
 namespace SOLID.UseCases
 {
     public class RegisterUser : IRegisterUser
     {
         private readonly IUserRepository _userRepository;
-
-        public RegisterUser(IUserRepository userRepository)
+        private readonly IEmployeeRepository _employeeRepository;
+        public RegisterUser(IUserRepository userRepository, IEmployeeRepository employeeRepository)
         {
             _userRepository = userRepository;
+            _employeeRepository = employeeRepository;
         }
 
         public void Execute(AuthRequest request)
@@ -31,6 +33,9 @@ namespace SOLID.UseCases
 
             user.Password = passwordHash;
 
+            var employee = new Employee { Category = "hourly", Name = request.Username, HourlyRate = 50 };   
+
+            _employeeRepository.Save(employee);
             // Save unique user
             _userRepository.Save(user);
         }

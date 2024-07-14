@@ -19,14 +19,14 @@ namespace SOLID.UseCases
             _calculateSalaryFactoryMethod = calculateSalaryFactoryMethod;
         }
 
-        public double Execute(Guid employeeId, int year, int month)
+        public double Execute(string employeeName, int year, int month)
         {
-            Employee employee = _employeeRepository.Get(employeeId);
+            Employee employee = _employeeRepository.Get(x => x.Name.ToLower() == employeeName.ToLower()).FirstOrDefault();
 
             if (employee == null) throw new ArgumentException("Invalid ID for employee");
 
             List<Payroll> payrools = _payrollRepository
-                .Get(p => p.EmployeeId == employeeId && p.Checkin.HasValue && p.Checkin.Value.Year == year && p.Checkin.Value.Month == month)
+                .Get(p => p.Employee == employee && p.Checkin.HasValue && p.Checkin.Value.Year == year && p.Checkin.Value.Month == month)
                 .ToList();
 
             int totalHours = payrools

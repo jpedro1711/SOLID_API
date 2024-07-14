@@ -32,9 +32,9 @@ namespace SOLID.Controllers
         }
 
         [HttpGet("calculate-salary")]
-        public IActionResult CalculateSalary(Guid employeeId, int year, int month)
+        public IActionResult CalculateSalary(string employeeName, int year, int month)
         {
-            return Ok(_calculatePayroll.Execute(employeeId, year, month));
+            return Ok(_calculatePayroll.Execute(employeeName, year, month));
         }
 
         [HttpPost]

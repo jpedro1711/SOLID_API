@@ -17,17 +17,15 @@ namespace Solid.Application.UseCases
             _payrollRepository = payrollRepository;
         }
 
-        public IEnumerable<Payroll> /*PagedResultResponse<Payroll>*/ Execute(GetPayrollsByEmployeeRequest request)
+        public PagedResultResponse<Payroll> Execute(GetPayrollsByEmployeeRequest request)
         {
             var employee = _getEmployeeByUsername.Execute(new GetEmployeeByUsernameRequest { EmployeeUniqueName = request.EmployeeUniqueName });
 
             if (employee == null)
             {
-                //return new PagedResultResponse<Payroll> { };
-                return Enumerable.Empty<Payroll>();
+                return new PagedResultResponse<Payroll> { };
             }
-            return _payrollRepository.Get(x => x.Employee == employee).OrderByDescending(x => x.Checkin);
-            /*
+            
             var query = _payrollRepository.Get(x => x.Employee == employee);
 
             if (request.Year != null)
@@ -51,7 +49,7 @@ namespace Solid.Application.UseCases
 
             int totalPages = (int)Math.Ceiling(totalItems / (double)request.PageSize); 
 
-            return new PagedResultResponse<Payroll> { data = payrolls, PageSize = request.PageSize, PageNumber = request.PageNumber, TotalPages = totalPages, TotalItems = totalItems }; */
+            return new PagedResultResponse<Payroll> { data = payrolls, PageSize = request.PageSize, PageNumber = request.PageNumber, TotalPages = totalPages, TotalItems = totalItems }; 
         }
     }
 }

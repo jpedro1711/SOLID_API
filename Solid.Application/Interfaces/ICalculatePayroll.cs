@@ -2,6 +2,6 @@
 {
     public interface ICalculatePayroll
     {
-        double Execute(Guid employeeId, int year, int month);
+        double Execute(string employeeName, int year, int month);
     }
 }

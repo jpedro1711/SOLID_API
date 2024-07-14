@@ -9,7 +9,7 @@ namespace Solid.Application.Requests
     public class GetPayrollsByEmployeeRequest
     {
         public string EmployeeUniqueName { get; set; }
-        /* public int? Month { get; set; }
+        public int? Month { get; set; }
         public int? Year { get; set; }
         const int maxPageSize = 50;
         public int PageNumber { get; set; } = 0;
@@ -24,6 +24,6 @@ namespace Solid.Application.Requests
             {
                 _pageSize = (value > maxPageSize) ? maxPageSize : value;
             }
-        } */
+        } 
     }
 }

@@ -11,6 +11,6 @@ namespace Solid.Application.Interfaces
 {
     public interface IGetPayrollsByEmployee
     {
-        IEnumerable<Payroll> Execute(GetPayrollsByEmployeeRequest request);
+        PagedResultResponse<Payroll> Execute(GetPayrollsByEmployeeRequest request);
     }
 }

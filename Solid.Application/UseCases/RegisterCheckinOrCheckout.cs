@@ -22,7 +22,7 @@ namespace SOLID.UseCases
         public BaseResponse Execute(RegisterCheckinOrCheckoutRequest request)
         {
 
-            var employee = _employeeRepository.Get(x => x.Name.ToLower() == request.EmployeeUniqueName.ToLower()).First();
+            var employee = _employeeRepository.Get(x => x.Name.ToLower() == request.EmployeeUniqueName.ToLower()).FirstOrDefault();
 
             if (employee == null)
             {
