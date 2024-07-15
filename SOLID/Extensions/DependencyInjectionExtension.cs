@@ -16,6 +16,8 @@ using System.Text;
 using System.Reflection;
 using Solid.Application.Interfaces;
 using Solid.Application.UseCases;
+using MediatR;
+using MediatR.Wrappers;
 
 namespace SOLID.Extensions.DependencyInjection
 {
@@ -37,6 +39,7 @@ namespace SOLID.Extensions.DependencyInjection
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGetEmployeeByUsername, GetEmployeeByUsername>();
             services.AddScoped<IGetPayrollsByEmployee, GetPayrollsByEmployee>();
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
             services.AddHttpContextAccessor();
             services.AddCors(options =>
             {
