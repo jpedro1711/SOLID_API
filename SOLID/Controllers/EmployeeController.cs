@@ -4,31 +4,36 @@ using Solid.Application.Interfaces;
 using Solid.Application.Requests;
 using SOLID.Controllers.Requests;
 using SOLID.Controllers.Responses;
+using SOLID.Data;
+using SOLID.Repositories;
 using SOLID.UseCases.Interfaces;
 
 namespace SOLID.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    //[Authorize]
     public class EmployeeController : ControllerBase
     {
         private readonly ICalculatePayroll _calculatePayroll;
         private readonly IRegisterCheckinOrCheckout _registerCheckinOrCheckout;
         private readonly IGetEmployeeByUsername _getEmployeeByUsername;
         private readonly IGetPayrollsByEmployee _getPayrollsByEmployee;
+        private readonly IAppDbContext _appDbContext;
 
         public EmployeeController(
             ICalculatePayroll calculatePayroll, 
             IRegisterCheckinOrCheckout registerCheckinOrCheckout, 
             IGetEmployeeByUsername getEmployeeByUsername, 
-            IGetPayrollsByEmployee getPayrollsByEmployee
+            IGetPayrollsByEmployee getPayrollsByEmployee,
+            IAppDbContext appDb
             )
         {
             _calculatePayroll = calculatePayroll;
             _registerCheckinOrCheckout = registerCheckinOrCheckout;
             _getEmployeeByUsername = getEmployeeByUsername;
             _getPayrollsByEmployee = getPayrollsByEmployee;
+            _appDbContext = appDb;
         }
 
         [HttpGet("calculate-salary")]
@@ -47,6 +52,13 @@ namespace SOLID.Controllers
         public IActionResult GetPayrollsByEmployeeName([FromQuery] GetPayrollsByEmployeeRequest request)
         {
             return Ok(_getPayrollsByEmployee.Execute(request));
+        }
+
+        [HttpGet("vw")]
+        public IActionResult GetByView()
+        {
+            
+            return Ok(_appDbContext.TotalPayrollsByEmployeeVW.ToList());
         }
     }
 }
